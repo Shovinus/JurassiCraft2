@@ -61,7 +61,7 @@ public class FossilGrinderBlockEntity extends MachineBaseBlockEntity {
 
         if (!input.isEmpty()) {
             GrindableItem grindableItem = GrindableItem.getGrindableItem(input);
-
+	    if(grindableItem == null){return;}
             ItemStack output = grindableItem.getGroundItem(input, rand);
 
             int emptySlot = this.getOutputSlot(output);
